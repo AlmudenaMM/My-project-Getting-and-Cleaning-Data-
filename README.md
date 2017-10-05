@@ -10,7 +10,7 @@
     https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
     
 #Content of this repository:
-  "Info.md": General information about the data
+  "Info": General information about the data
   "Codebook.pdf": A codebook of the data, with specified information about the variables of the data
   "run_analysis.R": The R script created to do the following,
     1.Merges the training and the test sets to create one data set.
