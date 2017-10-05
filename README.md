@@ -10,8 +10,8 @@
     https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
     
 #Content of this repository:
-  -"Info.md": General information about the data
-  "Codebook.md": A codebook of the data, with specified information about the variables of the data
+  "Info.md": General information about the data
+  "Codebook.pdf": A codebook of the data, with specified information about the variables of the data
   "run_analysis.R": The R script created to do the following,
     1.Merges the training and the test sets to create one data set.
     2.Extracts only the measurements on the mean and standard deviation for each measurement.
