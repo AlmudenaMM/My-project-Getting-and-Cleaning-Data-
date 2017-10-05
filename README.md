@@ -11,11 +11,11 @@
     
 #Content of this repository:
 
-  *"Info": General information about the data
+  * "Info": General information about the data
   
-  *"Codebook.pdf": A codebook of the data, with specified information about the variables of the data
+  * "Codebook.pdf": A codebook of the data, with specified information about the variables of the data
   
-  *"run_analysis.R": The R script created to do the following,
+  * "run_analysis.R": The R script created to do the following,
 
     1.Merges the training and the test sets to create one data set.
 
