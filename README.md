@@ -1,15 +1,15 @@
 ## My project "Getting and Cleaning Data"
 
-#Description:
+Description:
   This is the final project of the course "Getting and Cleaning Data" from the program "Data Science",  by Coursera
 
-#The purpose:
+The purpose:
   The purpose of this project is to demostrate the ability to collect, work with, and clean a data set.
   
-#The data for the project:
+The data for the project:
     https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
     
-#Content of this repository:
+Content of this repository:
 
   * "Info": General information about the data
   
