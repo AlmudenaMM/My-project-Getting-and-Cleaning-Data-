@@ -13,7 +13,7 @@ Content of this repository:
 
   * "Info": General information about the data
   
-  * "Codebook.pdf": A codebook of the data, with specified information about the variables of the data
+  * "Codebook.docx": A codebook of the data, with specified information about the variables of the data
   
   * "run_analysis.R": The R script created to do the following,
 
@@ -26,3 +26,4 @@ Content of this repository:
     4.Appropriately labels the data set with descriptive variable names.
 
     5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and      each subject.
+  * "Mean_Features": The table with the average of each variable for each activity and each subject.
