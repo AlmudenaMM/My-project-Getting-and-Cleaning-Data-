@@ -1,5 +1,5 @@
 
-setwd ("C:/Users/Almudena/Documents/Data Science/03.Getting and Cleaning Data/Proyecto Final")
+setwd (***)	#The work directory
 
 #Name of the variables:
 var.name <- read.csv("UCI HAR Dataset/features.txt", sep = "", header = FALSE)[2]
@@ -14,29 +14,35 @@ for (set in c("test", "train")){
 	#Two differents dirs, one for test and other for training
 	dir<-paste("UCI HAR Dataset/",sep="",set)
 
-	#Each dir has three txt archives then contain de data
+	#Each dir has three txt archives that contain de data
+	#The first has one column and contains the subject data
+	#The seconda has 561 columns and contains the experiment data
+	#The third has one column and contains the activities data
 	arc<-list.files(dir,pattern="txt",full.names=TRUE,recursive=FALSE)
 	
-	#For testing the program:
+	#For testing:
 	#for (i in 1:length(arc)){
 	#	data<-read.csv(arc[i])
 	#	print(dim(data))	
 	#}
 	
-	#This for merge the three in one by column
+	#Merge the three in one by column
 	for (i in 1:length(arc)){
 		if (i==1){
 			data<-read.csv(arc[i],sep="",head=FALSE)
 		} else {
 			data<-cbind(data,read.csv(arc[i],sep="",head=FALSE))
 		}
-		#print(dim(data))		#For testing the program 
+		#print(dim(data))		#For testing 
 	}
 
 	#Before to merge both sets, it is necesary to rename de names of column
+	#The first column corresponds with the first archive of the folder, wich is the subject data. It is called "ID".
+	#Tha last column corresponds with the third archive of the folder, wich is the activities data.It is called "Activity".
+	#The others correspond with the experiment data. It is called like it is indicated in the "activity_labels.txt", named in the program like "activ".
 	names(data)<-c("ID",as.character(var.name[,1]),"Activity")
 
-	#And distintc the set:
+	#And differentiate the set:
 	data<-cbind(data,set)
 	
 
@@ -66,15 +72,6 @@ names(data)[length(data)]<-"Activity.Name"
 #For summarize, the data will be convert to a tbl
 library(dplyr) 
 tbl.data<-as.tbl(data)
-
-
-mean.data.set<-tbl.data %>%
-			group_by(set) %>%
-			summarise_all(mean)
-
-write.table(as.data.frame(mean.data.set), 
-  "Mean by set.txt", sep=" ",
-   col.names=TRUE, row.names=FALSE, quote=TRUE, na="NA")
 
 mean.data.activ<-tbl.data %>%
 			group_by(Activity.Name,ID) %>%
