@@ -66,6 +66,10 @@ data<-merge(data, activ, by.x = "Activity", by.y = "V1")
 #It renames the last column with the name of activities:
 names(data)[length(data)]<-"Activity.Name"
 
+#Saving the data
+write.table(data, 
+  "data.txt", sep=" ",
+   col.names=TRUE, row.names=FALSE, quote=TRUE, na="NA")
 
 
 #SUMMARIZE
@@ -73,10 +77,12 @@ names(data)[length(data)]<-"Activity.Name"
 library(dplyr) 
 tbl.data<-as.tbl(data)
 
+#The average of each feature by Activity and subject
 mean.data.activ<-select(tbl.data,-set) %>%
 			group_by(Activity.Name,ID) %>%
 			summarise_all(mean)
 
+#Saving the result
 write.table(as.data.frame(mean.data.activ), 
   "Mean by activity and subject.txt", sep=" ",
    col.names=TRUE, row.names=FALSE, quote=TRUE, na="NA")
