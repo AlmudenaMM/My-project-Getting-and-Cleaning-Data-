@@ -73,7 +73,7 @@ names(data)[length(data)]<-"Activity.Name"
 library(dplyr) 
 tbl.data<-as.tbl(data)
 
-mean.data.activ<-tbl.data %>%
+mean.data.activ<-select(tbl.data,-set) %>%
 			group_by(Activity.Name,ID) %>%
 			summarise_all(mean)
 
